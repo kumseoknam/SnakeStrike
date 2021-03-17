@@ -43,7 +43,7 @@ find_package(VTK 8.0 REQUIRED )
 
 include_directories(${OpenCV_INCLUDE_DIRS}
                     ${PCL_INCLUDE_DIRS}
-                    /opt/pylon5/include   )
+                    /opt/pylon/include   )
 
 include_directories ("${PROJECT_SOURCE_DIR}/opensource")
 add_subdirectory ( opensource )
