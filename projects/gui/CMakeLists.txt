@@ -34,7 +34,7 @@ link_directories( ${PROJECT_BINARY_DIR}/common_source
 include_directories( .
                    ${PROJECT_SOURCE_DIR}/projects/gui
                    ${OpenCV_INCLUDE_DIRS}
-                   "/opt/pylon5/include"
+                   "/opt/pylon/include"
                    ${Qt5Core_INCLUDE_DIRS}
                    ${Qt5Widgets_INCLUDE_DIRS}
                    ${Qt5Concurrent_INCLUDE_DIRS}
