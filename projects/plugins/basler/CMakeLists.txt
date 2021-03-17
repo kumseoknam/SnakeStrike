@@ -12,7 +12,7 @@ set(CMAKE_AUTORCC ON) #handles resource files like icons
 
 include_directories( .
                    ${OpenCV_INCLUDE_DIRS}
-                   "/opt/pylon5/include"
+                   "/opt/pylon/include"
                    ${Qt5Core_INCLUDE_DIRS}
                    ${Qt5Widgets_INCLUDE_DIRS}
                    ${Qt5Concurrent_INCLUDE_DIRS}
@@ -37,7 +37,7 @@ set( BASLERCAMERA_HEADERS BaslerCamInfo.h
                             BaslerCamera.h
                             CamMaker.h
                             DeviceMaker.h)
-set(PYLON_ROOT /opt/pylon5)
+set(PYLON_ROOT /opt/pylon)
 execute_process(COMMAND ${PYLON_ROOT}/bin/pylon-config --cflags OUTPUT_VARIABLE PYLON_CXX_FLAGS)
 
 if (NOT ${PYLON_CXX_FLAGS})
@@ -58,7 +58,7 @@ set(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${PYLON_LINKER_FLAGS
 add_library( "${PLUGIN_NAME}_static" STATIC ${BASLERCAMERA_HEADERS} ${BASLERCAMERA_SOURCES}  )
 add_library( "${PLUGIN_NAME}" SHARED ${BASLERCAMERA_HEADERS} ${BASLERCAMERA_SOURCES} )
 
-set (BASLERCAMERA_LIBRARIES -L/opt/pylon5/lib64
+set (BASLERCAMERA_LIBRARIES -L/opt/pylon/lib64
                             -lFirmwareUpdate_gcc_v3_1_Basler_pylon
                             -llog4cpp_gcc_v3_1_Basler_pylon
                             -lLog_gcc_v3_1_Basler_pylon
