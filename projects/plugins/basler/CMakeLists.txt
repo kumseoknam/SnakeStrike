@@ -58,7 +58,7 @@ set(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${PYLON_LINKER_FLAGS
 add_library( "${PLUGIN_NAME}_static" STATIC ${BASLERCAMERA_HEADERS} ${BASLERCAMERA_SOURCES}  )
 add_library( "${PLUGIN_NAME}" SHARED ${BASLERCAMERA_HEADERS} ${BASLERCAMERA_SOURCES} )
 
-set (BASLERCAMERA_LIBRARIES -L/opt/pylon/lib64
+set (BASLERCAMERA_LIBRARIES -L/opt/pylon/lib
                             -lFirmwareUpdate_gcc_v3_1_Basler_pylon
                             -llog4cpp_gcc_v3_1_Basler_pylon
                             -lLog_gcc_v3_1_Basler_pylon
