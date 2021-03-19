@@ -68,6 +68,7 @@ void GuiCamArray::PopulateCams(QStringList& oCameraNames)
     mpLibHndl = dlopen(mCamLibPath.toStdString().c_str(), RTLD_LAZY);
     if (NULL == mpLibHndl)
     {
+        std::cerr << mCamLibPath.toStdString().c_str() << "\n";
         std::cerr << "Could not load the requested camera library." << std::endl;
         std::cerr << dlerror() << std::endl;
         return;
