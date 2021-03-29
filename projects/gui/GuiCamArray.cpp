@@ -133,13 +133,14 @@ void GuiCamArray::PopulateCams(QStringList& oCameraNames)
         {
             p_camera->SetupSoftwareTrigger();
         }
+        /*
         uint32_t split_len = split_string.size();
         firmware_levels.push_back( split_string[ split_len - 3 ] +
                                    "_" +
                                    split_string[ split_len - 2 ] +
                                    "_" +
                                    split_string[ split_len - 1 ] );
-
+        */
         QThread* thread = new QThread(mpParent);
         p_camera->moveToThread( thread );
         mCamThreads.push_back( thread );
@@ -185,7 +186,8 @@ void GuiCamArray::PopulateCams(QStringList& oCameraNames)
         mCamList.push_back( std::move(p_camera) );
         thread->start();
     }
-
+    
+    /*
     for (uint32_t i=1; i < firmware_levels.size() && firmware_levels.size() > 1; ++i)
     {
         if (firmware_levels[0] != firmware_levels[i])
@@ -210,7 +212,7 @@ void GuiCamArray::PopulateCams(QStringList& oCameraNames)
             msg_box.exec();
             break;
         }
-    }
+    }*/
 }
 
 bool GuiCamArray::GetCamera( const uint32_t iCamIndex, GuiCamera*& oCamera )
